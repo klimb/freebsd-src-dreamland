@@ -1,6 +1,7 @@
 Dreamland:
 - [UNIX userland was always as mess, you're just used to it](https://www.linkedin.com/pulse/unix-userland-always-mess-youre-just-used-dmitry-kalashnikov-2k6sc)
-- ever wondered why its rm -rf, yet its chown -Rf dvk:dvk? ls ("list" what? I think you mean files .. etc)
+- ever wondered why its rm -rf, yet its chown -Rf dvk:dvk? ls ("list" what? I think you mean directory files .. etc)
+- standardizing UNIX "userland" (commands you type) naming with verb-noun and their parameters (-h alway means help, -v verbose and so on). Its obvious that some parameters are common, some unique per command. Needs a thin parameter parsing layer. And structured (command) output for selection instead of searching through text streams (super slow, big-O). This is also a common parameter. 
 
 FreeBSD Source:
 ---------------
