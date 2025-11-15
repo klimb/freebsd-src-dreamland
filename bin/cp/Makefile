@@ -1,8 +1,8 @@
 .include <src.opts.mk>
 
 PACKAGE=runtime
-PROG=	cp
-SRCS=	cp.c utils.c
+PROG=	copy-file
+SRCS=	copy-file.c utils.c
 CFLAGS+= -D_ACL_PRIVATE
 
 HAS_TESTS=

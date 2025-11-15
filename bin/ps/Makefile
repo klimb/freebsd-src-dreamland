@@ -1,5 +1,5 @@
 PACKAGE=runtime
-PROG=	ps
+PROG=	get-process
 SRCS=	fmt.c keyword.c nlist.c print.c ps.c
 
 LIBADD=	m kvm jail xo

@@ -1,4 +1,4 @@
 PACKAGE=runtime
-PROG=	kill
+PROG=	kill-process
 
 .include <bsd.prog.mk>

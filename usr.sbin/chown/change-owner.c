@@ -72,13 +72,13 @@ main(int argc, char **argv)
 {
 	FTS *ftsp;
 	FTSENT *p;
-	int Hflag, Lflag, Rflag, fflag, hflag, vflag, xflag;
+	int Hflag, Lflag, rflag, fflag, hflag, vflag, xflag;
 	int ch, fts_options, rval;
 	char *cp;
 
 	ischown = (strcmp(basename(argv[0]), "chown") == 0);
 
-	Hflag = Lflag = Rflag = fflag = hflag = vflag = xflag = 0;
+	Hflag = Lflag = rflag = fflag = hflag = vflag = xflag = 0;
 	while ((ch = getopt(argc, argv, "HLPRfhvx")) != -1)
 		switch (ch) {
 		case 'H':
@@ -92,8 +92,8 @@ main(int argc, char **argv)
 		case 'P':
 			Hflag = Lflag = 0;
 			break;
-		case 'R':
-			Rflag = 1;
+		case 'r':
+			rflag = 1;
 			break;
 		case 'f':
 			fflag = 1;
@@ -119,9 +119,9 @@ main(int argc, char **argv)
 
 	(void)signal(SIGINFO, siginfo_handler);
 
-	if (Rflag) {
+	if (rflag) {
 		if (hflag && (Hflag || Lflag))
-			errx(1, "the -R%c and -h options may not be "
+			errx(1, "the -r%c and -h options may not be "
 			    "specified together", Hflag ? 'H' : 'L');
 		if (Lflag) {
 			fts_options = FTS_LOGICAL;
@@ -174,7 +174,7 @@ main(int argc, char **argv)
 
 		switch (p->fts_info) {
 		case FTS_D:			/* Change it at FTS_DP. */
-			if (!Rflag)
+			if (!rflag)
 				fts_set(ftsp, p, FTS_SKIP);
 			continue;
 		case FTS_DNR:			/* Warn, chown. */

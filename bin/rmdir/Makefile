@@ -1,7 +1,7 @@
 .include <src.opts.mk>
 
 PACKAGE=runtime
-PROG=	rmdir
+PROG=	remove-directory
 HAS_TESTS=
 SUBDIR.${MK_TESTS}+= tests
 

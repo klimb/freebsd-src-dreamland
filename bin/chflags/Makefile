@@ -1,7 +1,7 @@
 .include <src.opts.mk>
 
 PACKAGE=runtime
-PROG=	chflags
+PROG=	change-flags
 
 HAS_TESTS=
 SUBDIR.${MK_TESTS}+= tests

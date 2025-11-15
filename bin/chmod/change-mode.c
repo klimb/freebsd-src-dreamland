@@ -61,13 +61,13 @@ main(int argc, char *argv[])
 	FTS *ftsp;
 	FTSENT *p;
 	mode_t *set;
-	int Hflag, Lflag, Rflag, ch, fflag, fts_options, hflag, rval;
+	int Hflag, Lflag, rflag, ch, fflag, fts_options, hflag, rval;
 	int vflag;
 	char *mode;
 	mode_t newmode;
 
 	set = NULL;
-	Hflag = Lflag = Rflag = fflag = hflag = vflag = 0;
+	Hflag = Lflag = rflag = fflag = hflag = vflag = 0;
 	while ((ch = getopt(argc, argv, "HLPRXfghorstuvwx")) != -1)
 		switch (ch) {
 		case 'H':
@@ -81,8 +81,8 @@ main(int argc, char *argv[])
 		case 'P':
 			Hflag = Lflag = 0;
 			break;
-		case 'R':
-			Rflag = 1;
+		case 'r':
+			rflag = 1;
 			break;
 		case 'f':
 			fflag = 1;
@@ -125,9 +125,9 @@ done:	argv += optind;
 
 	(void)signal(SIGINFO, siginfo_handler);
 
-	if (Rflag) {
+	if (rflag) {
 		if (hflag)
-			errx(1, "the -R and -h options may not be "
+			errx(1, "the -r and -H options may not be "
 			    "specified together.");
 		if (Lflag) {
 			fts_options = FTS_LOGICAL;
@@ -162,7 +162,7 @@ done:	argv += optind;
 
 		switch (p->fts_info) {
 		case FTS_D:
-			if (!Rflag)
+			if (!rflag)
 				fts_set(ftsp, p, FTS_SKIP);
 			break;
 		case FTS_DNR:			/* Warn, chmod. */
@@ -219,7 +219,7 @@ static void
 usage(void)
 {
 	(void)fprintf(stderr,
-	    "usage: chmod [-fhv] [-R [-H | -L | -P]] mode file ...\n");
+	    "usage: chmod [-fhv] [-r [-H | -L | -P]] mode file ...\n");
 	exit(1);
 }
 

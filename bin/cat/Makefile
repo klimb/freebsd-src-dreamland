@@ -1,7 +1,7 @@
 .include <src.opts.mk>
 
 PACKAGE=runtime
-PROG=	cat
+PROG=	get-content
 
 .ifdef BOOTSTRAPPING
 # For the bootstrap cat we disable all wide char support to allow building

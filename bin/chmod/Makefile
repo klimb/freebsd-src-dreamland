@@ -1,7 +1,7 @@
 .include <src.opts.mk>
 
 PACKAGE=runtime
-PROG=	chmod
+PROG=	change-mode
 
 HAS_TESTS=
 SUBDIR.${MK_TESTS}+=	tests

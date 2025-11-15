@@ -1,7 +1,7 @@
 .include <src.opts.mk>
 
 PACKAGE=runtime
-PROG=	ls
+PROG=	list-directory
 SRCS=	cmp.c ls.c print.c util.c
 LIBADD=	util
 

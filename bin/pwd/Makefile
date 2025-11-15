@@ -1,4 +1,4 @@
 PACKAGE=runtime
-PROG=	pwd
+PROG=	get-present.directory
 
 .include <bsd.prog.mk>

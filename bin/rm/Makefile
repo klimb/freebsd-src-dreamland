@@ -1,7 +1,7 @@
 .include <src.opts.mk>
 
 PACKAGE=runtime
-PROG=	rm
+PROG=	remove-file
 
 LINKS=	${BINDIR}/rm ${BINDIR}/unlink
 MLINKS=	rm.1 unlink.1

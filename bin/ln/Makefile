@@ -1,7 +1,7 @@
 .include <src.opts.mk>
 
 PACKAGE=runtime
-PROG=	ln
+PROG=	link-file
 MAN=	ln.1 symlink.7
 
 LINKS=	${BINDIR}/ln ${BINDIR}/link

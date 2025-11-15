@@ -1,7 +1,7 @@
 .include <src.opts.mk>
 
 PACKAGE=runtime
-PROG=	mkdir
+PROG=	new-directory
 
 HAS_TESTS=
 SUBDIR.${MK_TESTS}+= tests

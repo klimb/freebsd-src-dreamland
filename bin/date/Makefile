@@ -1,7 +1,7 @@
 .include <src.opts.mk>
 
 PACKAGE=runtime
-PROG=	date
+PROG=	get-date
 SRCS=	date.c vary.c
 
 HAS_TESTS=

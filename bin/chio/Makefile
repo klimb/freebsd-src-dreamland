@@ -1,4 +1,4 @@
 PACKAGE=utilities
-PROG=	chio
+PROG=	change-medium
 
 .include <bsd.prog.mk>

@@ -1,7 +1,7 @@
 .include <src.opts.mk>
 
 PACKAGE=runtime
-PROG=	mv
+PROG=	move-file
 
 HAS_TESTS=
 SUBDIR.${MK_TESTS}+= tests
