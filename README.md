@@ -1,14 +1,9 @@
 Dreamland:
 ----------
-- [UNIX userland was always as mess, you're just used to it](https://www.linkedi
-n.com/pulse/unix-userland-always-mess-youre-just-used-dmitry-kalashnikov-2k6sc)
-- ever wondered why its rm -rf, yet its chown -Rf dvk:dvk? ls ("list" what? I th
-ink you mean directory files .. etc)
-- standardizing UNIX "userland" (commands you type) naming with verb-noun and th
-eir parameters (-h alway means help, -v verbose and so on). Its obvious that som
-e parameters are common, some unique per command. Needs a thin parameter parsing
- layer. And structured (command) output for selection instead of searching throu
-gh text streams (super slow, big-O). This is also a common parameter.
+- [UNIX userland was always as mess, you're just used to it](https://www.linkedin.com/pulse/unix-userland-always-mess-youre-just-used-dmitry-kalashnikov-2k6sc)
+- ever wondered why its rm -rf, yet its chown -Rf dvk:dvk? ls ("list" what? I think you mean directory files .. etc)
+- standardizing UNIX "userland" (commands you type) naming with verb-noun and their parameters (-h alway means help, -v verbose and so on). Its obvious that some parameters are common, some unique per command. Needs a thin parameter parsing
+ layer. And structured (command) output for selection instead of searching through text streams (super slow, big-O). This is also a common parameter.
 - some commands are focused on doing one thing and doing it well, and can be expressed as a verb-noun: ls is list-directory. Other commands (already) handle multiple verbs: hostname (hostname: "set or print name of current host system"). They can be split into set-hostname and get-hostname commands (disk space is not a concern in 2025). Or they need to be noun verb instead of verb noun: freebsd-update fetch (already does that .. that what we want). There is going to be a noun and a verb.
 - aliases are two different things: (1) short names for longer commands and (2) their default params: some-long-command is slc. Convention over configuration.
 
