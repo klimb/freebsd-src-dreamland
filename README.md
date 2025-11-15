@@ -1,3 +1,7 @@
+Dreamland:
+- [UNIX userland was always as mess, you're just used to it](https://www.linkedin.com/pulse/unix-userland-always-mess-youre-just-used-dmitry-kalashnikov-2k6sc)
+- ever wondered why its rm -rf, yet its chown -Rf dvk:dvk? ls ("list" what? I think you mean files .. etc)
+
 FreeBSD Source:
 ---------------
 This is the top level of the FreeBSD source directory.
