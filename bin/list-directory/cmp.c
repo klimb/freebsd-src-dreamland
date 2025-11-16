@@ -38,7 +38,7 @@
 #include <fts.h>
 #include <string.h>
 
-#include "ls.h"
+#include "list-directory.h"
 #include "extern.h"
 
 int

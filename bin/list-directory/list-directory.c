@@ -58,7 +58,7 @@
 #include <signal.h>
 #endif
 
-#include "ls.h"
+#include "list-directory.h"
 #include "extern.h"
 
 /*

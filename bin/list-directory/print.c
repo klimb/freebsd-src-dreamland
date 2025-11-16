@@ -55,7 +55,7 @@
 #include <signal.h>
 #endif
 
-#include "ls.h"
+#include "list-directory.h"
 #include "extern.h"
 
 static int	printaname(const FTSENT *, u_long, u_long);

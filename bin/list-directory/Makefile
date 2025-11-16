@@ -2,7 +2,7 @@
 
 PACKAGE=runtime
 PROG=	list-directory
-SRCS=	cmp.c ls.c print.c util.c
+SRCS=	cmp.c list-directory.c print.c util.c
 LIBADD=	util
 
 .if ${MK_LS_COLORS} != no

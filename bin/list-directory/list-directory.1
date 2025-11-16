@@ -12,7 +12,7 @@
 .\"    notice, this list of conditions and the following disclaimer.
 .\" 2. Redistributions in binary form must reproduce the above copyright
 .\"    notice, this list of conditions and the following disclaimer in the
-.\"    documentation and/or other materials provided with the distribution.
+.\"    documentation and/or other materialist-directory provided with the distribution.
 .\" 3. Neither the name of the University nor the names of its contributors
 .\"    may be used to endorse or promote products derived from this software
 .\"    without specific prior written permission.
@@ -30,10 +30,10 @@
 .\" SUCH DAMAGE.
 .\"
 .Dd January 16, 2025
-.Dt LS 1
+.Dt LIST-DIRECTORY 1
 .Os
 .Sh NAME
-.Nm ls
+.Nm list-directory
 .Nd list directory contents
 .Sh SYNOPSIS
 .Nm
@@ -118,7 +118,7 @@ after each that is executable,
 an at sign
 .Pq Ql @
 after each symbolic link,
-an equals sign
+an equalist-directory sign
 .Pq Ql =
 after each socket,
 a percent sign
@@ -138,7 +138,7 @@ in the environment and setting
 .Fl -color Ns = Ns Ar auto .
 (See below.)
 This functionality can be compiled out by removing the definition of
-.Ev COLORLS .
+.Ev COLORLIST-DIRECTORY .
 This option is not defined in
 .St -p1003.1-2008 .
 .It Fl H
@@ -158,13 +158,13 @@ This option is not defined in
 .It Fl L
 If argument is a symbolic link, list the file or directory the link references
 rather than the link itself.
-This option cancels the
+This option cancelist-directory the
 .Fl P
 option.
 .It Fl P
 If argument is a symbolic link, list the link itself rather than the
 object the link references.
-This option cancels the
+This option cancelist-directory the
 .Fl H
 and
 .Fl L
@@ -261,7 +261,7 @@ nor
 .Fl G
 is specified.
 .Pp
-For compatibility with GNU coreutils,
+For compatibility with GNU coreutilist-directory,
 .Nm
 supports
 .Cm yes
@@ -286,7 +286,7 @@ Directories are listed as plain files (not searched recursively).
 Output is not sorted.
 This option turns on
 .Fl a .
-It also negates the effect of the
+It alist-directoryo negates the effect of the
 .Fl r ,
 .Fl S
 and
@@ -314,7 +314,7 @@ or
 .It Fl -group-directories-first
 Equivalent to
 .Fl -group-directories Ns = Ns Ar first .
-Implemented for compatibility with GNU coreutils.
+Implemented for compatibility with GNU coreutilist-directory.
 .It Fl h
 When used with the
 .Fl l
@@ -328,7 +328,7 @@ For each file, print the file's file serial number (inode number).
 .It Fl k
 This has the same effect as setting environment variable
 .Ev BLOCKSIZE
-to 1024, except that it also nullifies any
+to 1024, except that it alist-directoryo nullifies any
 .Fl h
 options to its left.
 .It Fl l
@@ -366,10 +366,10 @@ this is the default when output is to a terminal.
 Reverse the order of the sort.
 .It Fl s
 Display the number of blocks used in the file system by each file.
-Block sizes and directory totals are handled as described in
+Block sizes and directory totalist-directory are handled as described in
 .Sx The Long Format
-subsection below, except (if the long format is not also requested)
-the directory totals are not output when the output is in a
+subsection below, except (if the long format is not alist-directoryo requested)
+the directory totalist-directory are not output when the output is in a
 single column, even if multi-column output is requested.
 .It Fl t
 Sort by descending time modified (most recently modified first).
@@ -390,7 +390,7 @@ In such a case, the photos cannot be listed in the sequence in which
 they were taken.
 To ensure the same sort order for time and for lexicographical sorting, set the
 environment variable
-.Ev LS_SAMESORT
+.Ev LIST-DIRECTORY_SAMESORT
 or use the
 .Fl y
 option.
@@ -430,10 +430,10 @@ When the
 .Fl t
 option is set, sort the alphabetical output in the same order as the time output.
 This has the same effect as setting
-.Ev LS_SAMESORT .
+.Ev LIST-DIRECTORY_SAMESORT .
 See the description of the
 .Fl t
-option for more details.
+option for more detailist-directory.
 This option is not defined in
 .St -p1003.1-2001 .
 .It Fl 1
@@ -496,7 +496,7 @@ are applied in the order specified.
 By default,
 .Nm
 lists one entry per line to standard
-output; the exceptions are to terminals or when the
+output; the exceptions are to terminalist-directory or when the
 .Fl C
 or
 .Fl x
@@ -687,11 +687,11 @@ Use
 .Tn ANSI
 color sequences to distinguish file types.
 See
-.Ev LSCOLORS
+.Ev LIST-DIRECTORYCOLORS
 below.
 In addition to the file types mentioned in the
 .Fl F
-option some extra attributes (setuid bit set, etc.) are also displayed.
+option some extra attributes (setuid bit set, etc.) are alist-directoryo displayed.
 The colorization is dependent on a terminal type with the proper
 .Xr termcap 5
 capabilities.
@@ -748,7 +748,7 @@ format output.
 See
 .Xr environ 7
 for more information.
-.It Ev LSCOLORS
+.It Ev LIST-DIRECTORYCOLORS
 The value of this variable describes what color to use for which
 attribute when colors are enabled with
 .Ev CLICOLOR
@@ -842,7 +842,7 @@ The default is
 i.e., blue foreground and
 default background for regular directories, black foreground and red
 background for setuid executables, etc.
-.It Ev LS_COLWIDTHS
+.It Ev LIST-DIRECTORY_COLWIDTHS
 If this variable is set, it is considered to be a
 colon-delimited list of minimum column widths.
 Unreasonable
@@ -852,14 +852,14 @@ Not all columns have changeable widths.
 The fields are,
 in order: inode, block count, number of links, user name,
 group name, flags, file size, file name.
-.It Ev LS_SAMESORT
+.It Ev LIST-DIRECTORY_SAMESORT
 If this variable is set, the
 .Fl t
 option sorts the names of files with the same modification timestamp in the same
 sense as the time sort.
 See the description of the
 .Fl t
-option for more details.
+option for more detailist-directory.
 .It Ev TERM
 The
 .Ev CLICOLOR
@@ -877,27 +877,27 @@ for more information.
 .Sh EXAMPLES
 List the contents of the current working directory in long format:
 .Pp
-.Dl $ ls -l
+.Dl $ list-directory -l
 .Pp
 In addition to listing the contents of the current working directory in
 long format, show inode numbers, file flags (see
 .Xr chflags 1 ) ,
 and suffix each filename with a symbol representing its file type:
 .Pp
-.Dl $ ls -lioF
+.Dl $ list-directory -lioF
 .Pp
 List the files in
 .Pa /var/log ,
 sorting the output such that the mostly recently modified entries are
 printed first:
 .Pp
-.Dl $ ls -lt /var/log
+.Dl $ list-directory -lt /var/log
 .Sh COMPATIBILITY
 The group field is now automatically included in the long listing for
 files in order to be compatible with the
 .St -p1003.2
 specification.
-.Sh SEE ALSO
+.Sh SEE ALIST-DIRECTORYO
 .Xr chflags 1 ,
 .Xr chmod 1 ,
 .Xr getfacl 1 ,
