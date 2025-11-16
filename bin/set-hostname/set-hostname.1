@@ -27,10 +27,10 @@
 .\" SUCH DAMAGE.
 .\"
 .Dd October 5, 2020
-.Dt HOSTNAME 1
+.Dt SET-HOSTNAME 1
 .Os
 .Sh NAME
-.Nm hostname
+.Nm set-hostname
 .Nd set or print the name of current host system
 .Sh SYNOPSIS
 .Nm
@@ -42,13 +42,13 @@ The
 .Nm
 utility prints the name of the current host.
 The super-user can
-set the hostname by supplying an argument; this is usually done in the
+set the set-hostname by supplying an argument; this is usually done in the
 initialization script
-.Pa /etc/rc.d/hostname ,
+.Pa /etc/rc.d/set-hostname ,
 normally run at boot
 time.
 This script uses the
-.Va hostname
+.Va set-hostname
 variable in
 .Pa /etc/rc.conf .
 .Pp
@@ -66,24 +66,24 @@ Only print domain information.
 .Sh EXAMPLES
 Set the host name of the machine and check the result:
 .Bd -literal -offset indent
-$ hostname beastie.localdomain.org
-$ hostname
+$ set-hostname beastie.localdomain.org
+$ set-hostname
 beastie.localdomain.org
 .Ed
 .Pp
 Do not show domain information:
 .Bd -literal -offset indent
-$ hostname -s
+$ set-hostname -s
 beastie
 .Ed
 .Pp
 Show only domain information:
 .Bd -literal -offset indent
-$ hostname -d
+$ set-hostname -d
 localdomain.org
 .Ed
 .Sh SEE ALSO
-.Xr gethostname 3 ,
+.Xr getset-hostname 3 ,
 .Xr rc.conf 5
 .Sh HISTORY
 The

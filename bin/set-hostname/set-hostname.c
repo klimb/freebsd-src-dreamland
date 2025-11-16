@@ -42,61 +42,32 @@ static void usage(void) __dead2;
 int
 main(int argc, char *argv[])
 {
-	int ch, sflag, dflag;
-	char hostname[MAXHOSTNAMELEN], *hostp, *p;
+  int ch;
 
-	sflag = 0;
-	dflag = 0;
-	while ((ch = getopt(argc, argv, "fsd")) != -1)
-		switch (ch) {
-		case 'f':
-			/*
-			 * On Linux, "hostname -f" prints FQDN.
-			 * BSD "hostname" always prints FQDN by
-			 * default, so we accept but ignore -f.
-			 */
-			break;
-		case 's':
-			sflag = 1;
-			break;
-		case 'd':
-			dflag = 1;
-			break;
-		case '?':
-		default:
-			usage();
-		}
-	argc -= optind;
-	argv += optind;
+  while ((ch = getopt(argc, argv, "h")) != -1)
+    switch (ch) {
+    case 'h':
+    default:
+      usage();
+    }
+  argc -= optind;
+  argv += optind;
 
-	if (argc > 1 || (sflag && dflag))
-		usage();
+  if (argc > 1)
+    usage();
+  
+  if (*argv) {
+    if (sethostname(*argv, (int)strlen(*argv)))
+      err(1, "set-hostname");
+  }
 
-	if (*argv) {
-		if (sethostname(*argv, (int)strlen(*argv)))
-			err(1, "sethostname");
-	} else {
-		hostp = hostname;
-		if (gethostname(hostname, (int)sizeof(hostname)))
-			err(1, "gethostname");
-		if (sflag) {
-			p = strchr(hostname, '.');
-			if (p != NULL)
-				*p = '\0';
-		} else if (dflag) {
-			p = strchr(hostname, '.');
-			if (p != NULL)
-				hostp = p + 1;
-		}
-		(void)printf("%s\n", hostp);
-	}
-	exit(0);
+  exit(0);
 }
 
 static void
 usage(void)
 {
 
-	(void)fprintf(stderr, "usage: hostname [-f] [-s | -d] [name-of-host]\n");
-	exit(1);
+  (void)fprintf(stderr, "usage: set-hostname [name-of-host]\n");
+  exit(1);
 }

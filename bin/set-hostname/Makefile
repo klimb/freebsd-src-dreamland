@@ -1,7 +1,7 @@
 .include <src.opts.mk>
 
 PACKAGE=runtime
-PROG=	hostname
+PROG=	set-hostname
 
 HAS_TESTS=
 SUBDIR.${MK_TESTS}=	tests
