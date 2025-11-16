@@ -1,8 +1,8 @@
 .include <src.opts.mk>
 
 PACKAGE=runtime
-PROG=	get-date
-SRCS=	date.c vary.c
+PROG=	set-date
+SRCS=	set-date.c vary.c
 
 HAS_TESTS=
 SUBDIR.${MK_TESTS}+= tests
